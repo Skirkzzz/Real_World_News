@@ -15,6 +15,7 @@ fetch('https://www.reddit.com/r/manchester/new.json')
         data1 = postArr[i].data;
         markup+=`
         <div class="card">
+        <a class="post" href="https://www.reddit.com/${data1.permalink}">
         <h1 class="title">${data1.title}</h1>
         <p class="message">${data1.selftext}</p>
         <p class="author">${data1.author}</p>
