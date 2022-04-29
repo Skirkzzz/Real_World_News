@@ -16,6 +16,7 @@ fetch('https://www.reddit.com/r/manchester/new.json')
         markup+=`
         <div class="card">
         <h1 class="title">${data1.title}</h1>
+        <img src=${data1.postimage} alt="img" class="image">
         <p class="message">${data1.selftext}</p>
         <p class="author">${data1.author}</p>
         <p class=""   ></p>

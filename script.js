@@ -1,24 +1,26 @@
 const card = document.querySelector(".card");
+//const input = document.getElementById("search");
+//var location = input.value;
 
-fetch('https://www.reddit.com/r/manchester/new.json')
+fetch("https://www.reddit.com/r/manchester/new.json")
         .then(function(res) {
         //let data = object.entries(data)
         return res.json();
 })
     .then(function(res) { 
 
-    let data1, markup=``;
+    let dataAll, markup=``;
 
-    const postArr = res.data.children
+    const postArray = res.data.children
     
-    for (let i = 0; i < postArr.length; i++) {
-        data1 = postArr[i].data;
+    for (let i = 0; i < postArray.length; i++) {
+        dataAll = postArray[i].data;
         markup+=`
         <div class="card">
-        <a class="post" href="https://www.reddit.com/${data1.permalink}">
-        <h1 class="title">${data1.title}</h1>
-        <p class="message">${data1.selftext}</p>
-        <p class="author">${data1.author}</p>
+        <a class="post" href="https://www.reddit.com/${dataAll.permalink}">
+        <h1 class="title">${dataAll.title}</h1>
+        <p class="message">${dataAll.selftext}</p>
+        <p class="author">${dataAll.author}</p>
         <p class=""   ></p>
         </div>
         `;
@@ -28,6 +30,81 @@ fetch('https://www.reddit.com/r/manchester/new.json')
     .catch((err)=> {
         console.log(err);
     })
+
+// Initialize the map.
+let map;
+let geocoder;
+let infowindow;
+var searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", function() {
+    var searchText = document.getElementById("searchText").value;
+    console.log(searchText);
+    lookupLocation(searchText);
+    //geocodeAddress(searchText);
+});
+
+function getPlaceData() {
+    // create a reference the search text
+
+    // get the search text
+    // pass the search text to the lookup location
+    var input = getElementById("mapsearch");
+    t.input.textcontent.addEventListener("onclick");
+    prompt(lookupLocation);
+}
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: {
+            lat: 40.72,
+            lng: -73.96,
+        },
+    });
+    geocoder = new google.maps.Geocoder();
+    infowindow = new google.maps.InfoWindow();
+}
+
+function lookupLocation(location) {
+    var requestOptions = {
+        method: "GET",
+        mode: "no-cors",
+    };
+    fetch(
+            `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${location}&types=establishment&location=37.76999%2C-122.44696&radius=500&key=AIzaSyCr-Av0kS8QAYgzV2dOHJXomDn8rxTcsRA`
+        )
+        .then((response) => response.json())
+        .then((result) => getPlaceId(result));
+}
+
+function getPlaceId(result) {
+    console.log(result);
+    var placeId = result.predictions[0].place_id;
+    geocodePlaceId(placeId);
+}
+
+function geocodePlaceId(placeId) {
+    geocoder
+        .geocode({
+            placeId: placeId,
+        })
+        .then(({ results }) => {
+            if (results[0]) {
+                map.setZoom(11);
+                map.setCenter(results[0].geometry.location);
+                const marker = new google.maps.Marker({
+                    map,
+                    position: results[0].geometry.location,
+                });
+                infowindow.setContent(results[0].formatted_address);
+                infowindow.open(map, marker);
+            } else {
+                window.alert("No results found");
+            }
+        })
+        .catch((e) => window.alert("Geocoder failed due to: " + e));
+}
+window.initMap = initMap;
 
 var today = new Date;
 document.getElementById('time').innerHTML= today.toDateString();

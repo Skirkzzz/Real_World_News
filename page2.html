@@ -14,7 +14,6 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link href="/dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <title>Sunny Side Up!</title>
   </head>
@@ -28,7 +27,7 @@
       ></span>
       <div class="overlay-content">
         <form action="/action_page.php">
-          <input type="text" placeholder="Search.." name="search" />
+          <input id = "search" type="text" placeholder="Search.." name="search" />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
@@ -49,9 +48,30 @@
                 
       <div id="map" style="background-color: #bbb">
         <h1 id="newsHeader">Local News</h1>
+        <style>
+          #map {
+              height: 90%;
+          }
+          /*
+          * Optional: Makes the sample page fill the window.
+          */
+          
+          html,
+          body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+          }
+      </style>
+  
+      <div id="map"></div>
+  
+      <input type="text" id="searchText" name="q" placeholder="Search..." />
+      <button id="searchButton">Search</button>
+ 
       </div>
     </section>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr-Av0kS8QAYgzV2dOHJXomDn8rxTcsRA&callback=initMap&v=weekly" defer></script>
     <script rel="script" src="script.js"></script>
   </body>
 
