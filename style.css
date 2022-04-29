@@ -436,11 +436,18 @@ body {
   margin: 15px auto;
   border-radius: 5px;
   background-color: #eee;
+  scroll-behavior: smooth;
+  scrollbar-arrow-color: #eee;
+  overflow-y: auto;
+  height: auto;
+  overflow: hidden;
 }
 
 .post {
   text-decoration: none;
   color: inherit;
+  text-align: left;
+  padding: 14px;
 }
 
 #page1btn a {
