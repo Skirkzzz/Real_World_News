@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Sunny Side Up!</title>
+    <title>REAL News</title>
   </head>
 
   <body>
@@ -24,19 +24,17 @@
         class="closebtn"
         onclick="closeSearch()"
         title="Close Overlay"
-      ></span>
+      >X</span>
       <div class="overlay-content">
-        <form action="/action_page.php">
           <input id = "search" type="text" placeholder="Search.." name="search" />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+          <button type="submit" id="searchButton"><i class="fa fa-search"></i></button>
       </div>
     </div>
     <button class="openBtn" onclick="openSearch()">Open Search Box</button>
         <section class="row"> 
           <div class="reddit" style="background-color:#aaa;">
             <h1 id="redditheading">You Reddit Here</h1>
-            <div id="card">
+            <div id="cardcontainer">
               <div class="card">
                 <a class="post" href="">
                 <h1 class="title"></h1>

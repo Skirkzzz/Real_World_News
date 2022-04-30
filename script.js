@@ -2,46 +2,86 @@ const card = document.querySelector(".card");
 //const input = document.getElementById("search");
 //var location = input.value;
 
-fetch("https://www.reddit.com/r/manchester/new.json")
-        .then(function(res) {
-        //let data = object.entries(data)
-        return res.json();
-})
-    .then(function(res) { 
-
-    let dataAll, markup=``;
-
-    const postArray = res.data.children
-    
-    for (let i = 0; i < postArray.length; i++) {
-        dataAll = postArray[i].data;
-        markup+=`
-        <div class="card">
-        <a class="post" href="https://www.reddit.com/${dataAll.permalink}">
-        <h1 class="title">${dataAll.title}</h1>
-        <p class="message">${dataAll.selftext}</p>
-        <p class="author">${dataAll.author}</p>
-        <p class=""   ></p>
-        </div>
-        `;
-    };
-    card.insertAdjacentHTML('afterbegin',markup);
-})
-    .catch((err)=> {
-        console.log(err);
-    })
-
 // Initialize the map.
 let map;
 let geocoder;
 let infowindow;
+
 var searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", function() {
-    var searchText = document.getElementById("searchText").value;
-    console.log(searchText);
+    var searchText = document.getElementById("search").value;
+    //console.log(searchText);
     lookupLocation(searchText);
     //geocodeAddress(searchText);
 });
+
+function decodeEntity(inputStr) {
+  var textarea = document.createElement("textarea");
+  textarea.innerHTML = inputStr;
+  return textarea.value;
+}
+
+var topSearchButton = document.getElementById("searchButton");
+topSearchButton.addEventListener("click", function() {
+    
+    // Get the Location the user has entered
+    var searchText = document.getElementById("search").value;
+    if (searchText === "") 
+    {
+      alert("Please enter a location");
+      return;
+    }
+    
+    // Close the search bar
+    closeSearch();
+    // Lookup the location with Google Maps
+    lookupLocation(searchText);
+    // Lookup the location with Reddit
+    lookupReddit(searchText);
+});
+
+function lookupReddit(location)
+{
+  fetch(`https://www.reddit.com/r/${location}/new.json`)
+            .then(function(res) {
+            //let data = object.entries(data)
+            return res.json();
+    })
+    .then(function(res) { 
+      let dataAll, markup=``;
+      const postArray = res.data.children
+      
+      for (let i = 0; i < postArray.length; i++) {
+          var media = '';
+          //console.log(postArray[i].data.media_embed)
+          if (postArray[i].data.media_embed) {
+            
+            media = postArray[i].data.media_embed.content;
+            /*console.log(decodeEntity(media))
+            const frame = document.createElement('iframe');
+            frame.innerHTML = decodeEntity(media);
+            document.getElementById('card').appendChild(frame);
+            */
+          } 
+          dataAll = postArray[i].data;
+          
+          markup+=`
+          <div class="card">
+            <a class="post" href="https://www.reddit.com/${dataAll.permalink}">
+            <h1 class="title">${dataAll.title}</h1>
+            <p class="message">${dataAll.selftext}</p>
+            <p class="author">${dataAll.author}</p>
+            <p class=""></p>
+            ${decodeEntity(media)}
+          </div>
+          `;
+      };
+      card.insertAdjacentHTML('afterbegin',markup);
+    })
+    .catch((err)=> {
+        console.log(err);
+    })
+}
 
 function getPlaceData() {
     // create a reference the search text
@@ -76,6 +116,8 @@ function lookupLocation(location) {
         .then((response) => response.json())
         .then((result) => getPlaceId(result));
 }
+
+
 
 function getPlaceId(result) {
     console.log(result);
