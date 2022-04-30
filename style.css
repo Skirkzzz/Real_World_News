@@ -429,18 +429,24 @@ body {
 }
 .card {
   width: 95%;
-  height: auto;
+  height: 750px;
   padding: 5px;
   margin: 15px auto;
   border-radius: 5px;
   background-color: #eee;
-  scroll-behavior: smooth;
-  scrollbar-arrow-color: #eee;
-  overflow-y: auto;
   height: auto;
   overflow: hidden;
+  height: auto;
 }
 
+#cardcontainer {
+  width: 95%;
+  height: 1200px;
+  border-radius: 5px;
+  background-color: #eee;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
 .post {
   text-decoration: none;
   color: inherit;
