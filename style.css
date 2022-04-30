@@ -310,7 +310,7 @@ html {
   position: absolute;
   top: 20px;
   right: 45px;
-  font-size: 60px;
+  font-size: 20px;
   cursor: pointer;
   color: white;
 }
@@ -374,7 +374,7 @@ body {
 
 .overlay-content {
   position: relative;
-  top: 46%;
+  top: 15%;
   width: 80%;
   text-align: center;
   margin-top: 30px;
@@ -463,4 +463,7 @@ body {
 .title1 {
   color: #415a6c;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#previousSearchList {
 }
