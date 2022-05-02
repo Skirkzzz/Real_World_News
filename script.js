@@ -1,6 +1,6 @@
 const card = document.querySelector(".card");
 //const input = document.getElementById("search");
-//var location = input.value;
+// var location = input.value;
 
 // Initialize the map.
 let map;
@@ -85,8 +85,9 @@ function getPlaceData() {
 
   // get the search text
   // pass the search text to the lookup location
-  var input = getElementById("mapsearch");
-  t.input.textcontent.addEventListener("onclick");
+  // var input = getElementById("mapsearch");
+  var input = getElementById("location");
+  input.textcontent.addEventListener("onclick");
   prompt(lookupLocation);
 }
 
@@ -94,8 +95,8 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 8,
     center: {
-      lat: 40.72,
-      lng: -73.96,
+      lat: 53.4808,
+      lng: -2.2426,
     },
   });
   geocoder = new google.maps.Geocoder();
@@ -254,3 +255,18 @@ window.onscroll = function () {
     a8.className = "";
   }
 };
+
+var testObject = { one: 1, two: 2, three: 3 };
+
+// Put the object into storage
+localStorage.setItem("testObject", JSON.stringify(testObject));
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem("testObject");
+
+console.log("retrievedObject: ", JSON.parse(retrievedObject));
+
+localStorage.setItem(key, val);
+var val = localStorage.getItem(key);
+localStorage.removeItem(key);
+localStorage.clear();

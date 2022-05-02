@@ -264,8 +264,8 @@ html {
   text-align: center;
   color: rgb(250, 246, 246);
   position: absolute;
-  top: 10%;
-  left: 28%;
+  top: 0%;
+  left: 0%;
   font-size: 25px;
   letter-spacing: 10px;
   background: rgb(7, 6, 6);
@@ -473,4 +473,16 @@ body {
   width: 80%;
   background: black;
   color: #eee;
+}
+
+.reddit {
+  background-color: #aaa;
+}
+
+#map {
+  background-color: #bbb;
+  height: 90%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

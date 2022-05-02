@@ -32,8 +32,8 @@
       <div>
         <h2 id="headerSearchHistory">"Previous Searches"</h2>
       </div>
-        <div class="previousSearchList">
-        <li>Previous Search 1</li>
+        <div class="divPreviousSearchList">
+        <li class="listPreviousSearch">Previous Search 1</li>
         <li>Previous Search 2</li>
         <li>Previous Search 3</li>
         <li>Previous Search 4</li>
@@ -42,7 +42,7 @@
     </div>
     <button class="openBtn" onclick="openSearch()">Open Search Box</button>
         <section class="row"> 
-          <div class="reddit" style="background-color:#aaa;">
+          <div class="reddit">
             <h1 id="redditheading">You Reddit Here</h1>
             <div id="cardcontainer">
               <div class="card">
@@ -56,29 +56,10 @@
           </div>
           
                 
-      <div id="map" style="background-color: #bbb">
+      <div id="map">
         <h1 id="newsHeader">Local News</h1>
-        <style>
-          #map {
-              height: 90%;
-          }
-          /*
-          * Optional: Makes the sample page fill the window.
-          */
-          
-          html,
-          body {
-              height: 100%;
-              margin: 0;
-              padding: 0;
-          }
-      </style>
-  
-      <div id="map"></div>
-  
       <input type="text" id="searchText" name="q" placeholder="Search..." />
       <button id="searchButton">Search</button>
- 
       </div>
     </section>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr-Av0kS8QAYgzV2dOHJXomDn8rxTcsRA&callback=initMap&v=weekly" defer></script>
