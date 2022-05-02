@@ -466,4 +466,11 @@ body {
 }
 
 #previousSearchList {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: black;
+  color: #eee;
 }
