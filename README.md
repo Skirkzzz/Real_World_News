@@ -1,5 +1,5 @@
-# Always-Sunny-In-Manchester
-## Project Requirements
+# Real World News
+## A web page utilising API's in order to display what people are currently saying around the world.
 
 You and your group will use everything you’ve learned over the past six units to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
