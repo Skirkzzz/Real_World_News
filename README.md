@@ -10,9 +10,11 @@ Through a search bar users are able to choose a location and are shown it in goo
 
 * Javascript
 
-* Google maps API
+### Public API's
 
-* Reddit API
+* Google maps
+
+* Reddit
 
 ## Presentation Requirements
 
@@ -38,7 +40,7 @@ This project is graded based on the following criteria:
 
 * Satisfies the following code requirements:
 
-  * Application uses at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources)
+Click [here](https://coding-boot-camp.github.io/full-stack/apis/api-resources) to view project
 
   * Application uses client-side storage to store persistent data.
 
