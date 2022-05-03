@@ -33,7 +33,7 @@ So that I can access a less biased, current and real account from a location
 
 * Javascript
 
-### Public API's
+#### API's
 
 * Google maps
 
