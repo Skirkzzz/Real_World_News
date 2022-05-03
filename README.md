@@ -17,16 +17,17 @@ Through a search bar users are able to choose a location and are shown it in goo
 * Click [here](./index.html) to access the webpage for yourself
 
 ## User Story
-```
 As a consumer of online news and media
+
 I want to hear more accurate accounts of current events directly from the people who live there
+
 So that I can access a less biased, current and real account from a location
-```
+
 
 ## Acceptance Criteria
-```
-In groups we have been asked to showcase everything we have learnt at a coding bootcamp after 6 weeks. Creative freedom has been given for this project but must fulfil the following:
 
+In groups we have been asked to showcase everything we have learnt at a coding bootcamp after 6 weeks. Creative freedom has been given for this project but must fulfil the following:
+```
 * Use a CSS framework other than Bootstrap.
 
 * Be deployed to GitHub Pages.
