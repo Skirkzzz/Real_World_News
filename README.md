@@ -1,7 +1,7 @@
 # Real World News
 ## A web page utilising API's in order to display what people are currently saying around the world.
 
-You and your group will use everything you’ve learned over the past six units to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+Through a search bar users are able to choose a location and are shown it in google maps, alongside the latest posts from that locations subreddit. Thus creating an enviroment where the user is able to experience conversations and concerns of that location unfiltered by the media conglomerates of the 21st century.
 
 * Use a CSS framework other than Bootstrap.
 
