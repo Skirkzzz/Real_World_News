@@ -3,6 +3,19 @@
 
 Through a search bar users are able to choose a location and are shown it in google maps, alongside the latest posts from that locations subreddit. Thus creating an enviroment where the user is able to experience conversations and concerns of that location unfiltered by the media conglomerates of the 21st century.
 
+## Instructions
+*Follow [this](https://cors-anywhere.herokuapp.com/corsdemo) link to allows the CORS proxy to function in the web page.
+
+* Follow the on screen promps to nagivate the website
+
+![image](https://user-images.githubusercontent.com/100947794/166459176-570cf8a9-273a-4b24-8a6d-189db9561a2d.png)
+
+* Use the search bar to select a location in the UK you would like to hear from
+
+![image](https://user-images.githubusercontent.com/100947794/166460915-a112766d-99bd-40e3-af32-be9d3e7ca26f.png)
+
+* Click [here](./index.html) to access the webpage for yourself
+
 ### All technologies used have been coded in Visual Studio 2022 version 17.1
 * HTML5
 
@@ -15,14 +28,3 @@ Through a search bar users are able to choose a location and are shown it in goo
 * Google maps
 
 * Reddit
-
-## Instructions
-* Follow the on screen promps to nagivate the website
-
-![image](https://user-images.githubusercontent.com/100947794/166459176-570cf8a9-273a-4b24-8a6d-189db9561a2d.png)
-
-* Use the search bar to select a location in the UK you would like to hear from
-
-![image](https://user-images.githubusercontent.com/100947794/166460915-a112766d-99bd-40e3-af32-be9d3e7ca26f.png)
-
-* Click [here](./index.html) to access the webpage for yourself
