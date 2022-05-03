@@ -16,45 +16,13 @@ Through a search bar users are able to choose a location and are shown it in goo
 
 * Reddit
 
-## Presentation Requirements
-
+## Instructions
+* Follow the on screen instructions
 
 ![image](https://user-images.githubusercontent.com/100947794/166459176-570cf8a9-273a-4b24-8a6d-189db9561a2d.png)
 
+* Use the search bar to select a location in the UK you would like to hear from
 
+![image](https://user-images.githubusercontent.com/100947794/166460915-a112766d-99bd-40e3-af32-be9d3e7ca26f.png)
 
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository
-
-## Grading Requirements
-
-This project is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 25%
-
-* Satisfies the following code requirements:
-
-Click [here](https://coding-boot-camp.github.io/full-stack/apis/api-resources) to view project
-
-  * Application uses client-side storage to store persistent data.
-
-  * Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
-
-  * Application uses a CSS framework other than Bootstrap.
-
-  * Application is interactive (accepts and responds to user input)
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
+* Click [here] to access the webpage
