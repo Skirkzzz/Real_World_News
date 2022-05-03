@@ -25,25 +25,27 @@ So that I can access a less biased, current and real account from a location
 
 ## Acceptance Criteria
 ```
-* Do not rely on Bootstrap
+In groups we have been asked to showcase everything we have learnt at a coding bootcamp after 6 weeks. Creative freedom has been given for this project but must fulfil the following:
 
-* Deploy to GitHub Pages.
+* Use a CSS framework other than Bootstrap.
 
-* Interactive, accepting and reponding to user input.
+* Be deployed to GitHub Pages.
 
-* Use at least two server-side APIs listed [here](https://coding-boot-camp.github.io/full-stack/apis/api-resources).
+* Be interactive (i.e., accept and respond to user input).
 
-* Does not use alerts, confirms, or prompts. Use modals to achieve this when necessary.
+* Use at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources).
 
-* Store persistent data by using client-side storage.
+* Does not use alerts, confirms, or prompts (use modals).
 
-* Responsive.
+* Use client-side storage to store persistent data.
 
-* Polished UI.
+* Be responsive.
 
-* Have a clean repository that meets quality coding standards.
+* Have a polished UI.
 
-* Have a quality README.
+* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
 
 ### All technologies used have been coded in Visual Studio 2022 version 17.1
