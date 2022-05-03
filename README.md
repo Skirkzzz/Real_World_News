@@ -17,7 +17,7 @@ Through a search bar users are able to choose a location and are shown it in goo
 * Reddit
 
 ## Instructions
-* Follow the on screen instructions
+* Follow the on screen promps to nagivate the website
 
 ![image](https://user-images.githubusercontent.com/100947794/166459176-570cf8a9-273a-4b24-8a6d-189db9561a2d.png)
 
@@ -25,4 +25,4 @@ Through a search bar users are able to choose a location and are shown it in goo
 
 ![image](https://user-images.githubusercontent.com/100947794/166460915-a112766d-99bd-40e3-af32-be9d3e7ca26f.png)
 
-* Click [here] to access the webpage
+* Click [./index.html] to access the webpage
