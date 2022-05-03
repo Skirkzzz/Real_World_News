@@ -20,19 +20,19 @@
 
   <body>
     <div id="myOverlay" class="overlay">
-      <span
-        class="closebtn"
-        onclick="closeSearch()"
-        title="Close Overlay"
-      >X</span>
+      <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+        >X</span
+      >
       <div class="overlay-content">
-          <input id = "search" type="text" placeholder="Search.." name="search" />
-          <button type="submit" id="searchButton"><i class="fa fa-search"></i></button>
+        <input id="search" type="text" placeholder="Search.." name="search" />
+        <button type="submit" id="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
       </div>
       <div>
         <h2 id="headerSearchHistory">"Previous Searches"</h2>
       </div>
-        <div class="divPreviousSearchList">
+      <div class="divPreviousSearchList">
         <li class="listPreviousSearch">Previous Search 1</li>
         <li>Previous Search 2</li>
         <li>Previous Search 3</li>
@@ -41,29 +41,31 @@
       </div>
     </div>
     <button class="openBtn" onclick="openSearch()">Open Search Box</button>
-        <section class="row"> 
-          <div class="reddit">
-            <h1 id="redditheading">You Reddit Here</h1>
-            <div id="cardcontainer">
-              <div class="card">
-                <a class="post" href=""></a>
-                  <i class="fa-solid fa-keyboard"></i>
-                <h1 class="title1"></h1>
-                <p class="message"></p>
-                <p class="author"></p>
-              </div>
-            </div>
+    <section class="row">
+      <div class="reddit">
+        <h1 id="redditheading">You Reddit Here</h1>
+        <div id="cardcontainer">
+          <div class="card">
+            <a class="post" href=""></a>
+            <i class="fa-solid fa-keyboard"></i>
+            <h1 class="title1"></h1>
+            <p class="message"></p>
+            <p class="author"></p>
           </div>
-          
-                
+        </div>
+      </div>
+
       <div id="map">
         <h1 id="newsHeader">Local News</h1>
-      <input type="text" id="searchText" name="q" placeholder="Search..." />
-      <button id="searchButton">Search</button>
+        <input type="text" id="searchText" name="q" placeholder="Search..." />
+        <button id="searchButton">Search</button>
       </div>
     </section>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr-Av0kS8QAYgzV2dOHJXomDn8rxTcsRA&callback=initMap&v=weekly" defer></script>
-    <script rel="script" src="script.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr-Av0kS8QAYgzV2dOHJXomDn8rxTcsRA&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script rel="script" src="page2.js"></script>
   </body>
 
   <footer></footer>
