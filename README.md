@@ -3,25 +3,16 @@
 
 Through a search bar users are able to choose a location and are shown it in google maps, alongside the latest posts from that locations subreddit. Thus creating an enviroment where the user is able to experience conversations and concerns of that location unfiltered by the media conglomerates of the 21st century.
 
-* Use a CSS framework other than Bootstrap.
+### All technologies used have been coded in Visual Studio 2022 version 17.1
+* HTML5
 
-* Be deployed to GitHub Pages.
+* CSS
 
-* Be interactive (i.e., accept and respond to user input).
+* Javascript
 
-* Use at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources).
+* Google maps API
 
-* Does not use alerts, confirms, or prompts (use modals).
-
-* Use client-side storage to store persistent data.
-
-* Be responsive.
-
-* Have a polished UI.
-
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+* Reddit API
 
 ## Presentation Requirements
 
