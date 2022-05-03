@@ -23,7 +23,7 @@ I want to hear more accurate accounts of current events directly from the people
 So that I can access a less biased, current and real account from a location
 ```
 
-## User Criteria
+## Acceptance Criteria
 ```
 * Do not rely on Bootstrap
 
