@@ -6,7 +6,7 @@ Through a search bar users are able to choose a location and are shown it in goo
 ## Instructions
 * Follow [this](https://cors-anywhere.herokuapp.com/corsdemo) link to allows the CORS proxy to function in the web page.
 
-* Follow the on screen promps to nagivate the website
+* Next follow the on screen promps to nagivate the website
 
 ![image](https://user-images.githubusercontent.com/100947794/166459176-570cf8a9-273a-4b24-8a6d-189db9561a2d.png)
 
