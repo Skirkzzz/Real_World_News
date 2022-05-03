@@ -18,6 +18,11 @@ Through a search bar users are able to choose a location and are shown it in goo
 
 ## Presentation Requirements
 
+
+![image](https://user-images.githubusercontent.com/100947794/166459176-570cf8a9-273a-4b24-8a6d-189db9561a2d.png)
+
+
+
 Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
 
 * Elevator pitch: a one minute description of your application
