@@ -23,7 +23,8 @@ I want to hear more accurate accounts of current events directly from the people
 So that I can access a less biased, current and real account from a location
 ```
 
-## Acceptance Criteria
+## User Criteria
+```
 * Do not rely on Bootstrap
 
 * Deploy to GitHub Pages.
@@ -43,6 +44,7 @@ So that I can access a less biased, current and real account from a location
 * Have a clean repository that meets quality coding standards.
 
 * Have a quality README.
+```
 
 ### All technologies used have been coded in Visual Studio 2022 version 17.1
 * HTML5
