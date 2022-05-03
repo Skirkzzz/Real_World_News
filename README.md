@@ -4,7 +4,7 @@
 Through a search bar users are able to choose a location and are shown it in google maps, alongside the latest posts from that locations subreddit. Thus creating an enviroment where the user is able to experience conversations and concerns of that location unfiltered by the media conglomerates of the 21st century.
 
 ## Instructions
-*Follow [this](https://cors-anywhere.herokuapp.com/corsdemo) link to allows the CORS proxy to function in the web page.
+* Follow [this](https://cors-anywhere.herokuapp.com/corsdemo) link to allows the CORS proxy to function in the web page.
 
 * Follow the on screen promps to nagivate the website
 
