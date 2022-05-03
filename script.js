@@ -29,7 +29,6 @@ topSearchButton.addEventListener("click", function () {
     alert("Please enter a location");
     return;
   }
-
   // Close the search bar
   closeSearch();
   // Lookup the location with Google Maps
@@ -37,31 +36,29 @@ topSearchButton.addEventListener("click", function () {
   // Lookup the location with Reddit
   lookupReddit(searchText);
 });
-
 function lookupReddit(location) {
+  //fetch reddit api with search text completing the reddit url
   fetch(`https://www.reddit.com/r/${location}/new.json`)
     .then(function (res) {
-      //let data = object.entries(data)
+      // Return JSON data
       return res.json();
     })
     .then(function (res) {
+      // Set up variable to write to HTML and another to contain the object from api
+      // Read data from specific part of array 
       let dataAll,
         markup = ``;
       const postArray = res.data.children;
-
+      // Convert object in to array to dynamically create the cards for reddit data in HTML
       for (let i = 0; i < postArray.length; i++) {
+        // If media is available then submit the information to variable "media"
         var media = "";
-        //console.log(postArray[i].data.media_embed)
         if (postArray[i].data.media_embed) {
           media = postArray[i].data.media_embed.content;
-          /*console.log(decodeEntity(media))
-            const frame = document.createElement('iframe');
-            frame.innerHTML = decodeEntity(media);
-            document.getElementById('card').appendChild(frame);
-            */
         }
         dataAll = postArray[i].data;
-
+        // Dynamically create and fill HTML cards with data
+        // Decode media from transmitted HTTPS back in to unicode-8 to be shown on page
         markup += `
           <div class="card">
             <a class="post" href="https://www.reddit.com/${dataAll.permalink}">
@@ -75,6 +72,7 @@ function lookupReddit(location) {
       }
       card.insertAdjacentHTML("afterbegin", markup);
     })
+    // Display error
     .catch((err) => {
       console.log(err);
     });
