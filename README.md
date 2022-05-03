@@ -25,4 +25,4 @@ Through a search bar users are able to choose a location and are shown it in goo
 
 ![image](https://user-images.githubusercontent.com/100947794/166460915-a112766d-99bd-40e3-af32-be9d3e7ca26f.png)
 
-* Click [index.html] to access the webpage for yourself
+* Click [here](./index.html) to access the webpage for yourself
