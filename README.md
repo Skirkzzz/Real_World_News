@@ -1,6 +1,6 @@
 # Real World News
-## A web page utilising API's in order to display what people are currently saying around the world.
 
+## A web page utilising API's in order to display what people are currently saying around the world.
 Through a search bar users are able to choose a location and are shown it in google maps, alongside the latest posts from that locations subreddit. Thus creating an enviroment where the user is able to experience conversations and concerns of that location unfiltered by the media conglomerates of the 21st century.
 
 ## Instructions
@@ -15,6 +15,16 @@ Through a search bar users are able to choose a location and are shown it in goo
 ![image](https://user-images.githubusercontent.com/100947794/166460915-a112766d-99bd-40e3-af32-be9d3e7ca26f.png)
 
 * Click [here](./index.html) to access the webpage for yourself
+
+## User Story
+```
+As a consumer of online news and media
+I want to hear more accurate accounts of current events directly from the people who live there
+So that I can access a less biased, current and real account from a location
+```
+
+## Acceptance Criteria
+
 
 ### All technologies used have been coded in Visual Studio 2022 version 17.1
 * HTML5
