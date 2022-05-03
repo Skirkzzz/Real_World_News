@@ -46,9 +46,7 @@ header {
 }
 
 body {
-  margin: 5px;
-  padding: 5px;
-  font-family: himalaya script;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--dark);
   background-color: var(--background);
   line-height: 1.5;
@@ -266,8 +264,8 @@ html {
   text-align: center;
   color: rgb(250, 246, 246);
   position: absolute;
-  top: 10%;
-  left: 28%;
+  top: 0%;
+  left: 0%;
   font-size: 25px;
   letter-spacing: 10px;
   background: rgb(7, 6, 6);
@@ -312,7 +310,7 @@ html {
   position: absolute;
   top: 20px;
   right: 45px;
-  font-size: 60px;
+  font-size: 20px;
   cursor: pointer;
   color: white;
 }
@@ -376,7 +374,7 @@ body {
 
 .overlay-content {
   position: relative;
-  top: 46%;
+  top: 15%;
   width: 80%;
   text-align: center;
   margin-top: 30px;
@@ -431,27 +429,60 @@ body {
 }
 .card {
   width: 95%;
-  height: auto;
+  height: 750px;
   padding: 5px;
   margin: 15px auto;
   border-radius: 5px;
   background-color: #eee;
-  scroll-behavior: smooth;
-  scrollbar-arrow-color: #eee;
-  overflow-y: auto;
   height: auto;
   overflow: hidden;
+  height: auto;
 }
 
+#cardcontainer {
+  width: 95%;
+  height: 1200px;
+  border-radius: 5px;
+  background-color: #eee;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
 .post {
   text-decoration: none;
   color: inherit;
   text-align: left;
-  padding: 14px;
+  color: #111;
 }
 
 #page1btn a {
   text-decoration: none;
   color: inherit;
   width: 75%;
+}
+
+.title1 {
+  color: #415a6c;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#previousSearchList {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: black;
+  color: #eee;
+}
+
+.reddit {
+  background-color: #aaa;
+}
+
+#map {
+  background-color: #bbb;
+  height: 90%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

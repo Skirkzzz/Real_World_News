@@ -1,6 +1,6 @@
 const card = document.querySelector(".card");
 //const input = document.getElementById("search");
-//var location = input.value;
+// var location = input.value;
 
 // Initialize the map.
 let map;
@@ -8,11 +8,11 @@ let geocoder;
 let infowindow;
 
 var searchButton = document.getElementById("searchButton");
-searchButton.addEventListener("click", function() {
-    var searchText = document.getElementById("search").value;
-    //console.log(searchText);
-    lookupLocation(searchText);
-    //geocodeAddress(searchText);
+searchButton.addEventListener("click", function () {
+  var searchText = document.getElementById("search").value;
+  //console.log(searchText);
+  lookupLocation(searchText);
+  //geocodeAddress(searchText);
 });
 
 function decodeEntity(inputStr) {
@@ -22,135 +22,130 @@ function decodeEntity(inputStr) {
 }
 
 var topSearchButton = document.getElementById("searchButton");
-topSearchButton.addEventListener("click", function() {
-    
-    // Get the Location the user has entered
-    var searchText = document.getElementById("search").value;
-    if (searchText === "") 
-    {
-      alert("Please enter a location");
-      return;
-    }
-    
-    // Close the search bar
-    closeSearch();
-    // Lookup the location with Google Maps
-    lookupLocation(searchText);
-    // Lookup the location with Reddit
-    lookupReddit(searchText);
+topSearchButton.addEventListener("click", function () {
+  // Get the Location the user has entered
+  var searchText = document.getElementById("search").value;
+  if (searchText === "") {
+    alert("Please enter a location");
+    return;
+  }
+
+  // Close the search bar
+  closeSearch();
+  // Lookup the location with Google Maps
+  lookupLocation(searchText);
+  // Lookup the location with Reddit
+  lookupReddit(searchText);
 });
 
-function lookupReddit(location)
-{
+function lookupReddit(location) {
   fetch(`https://www.reddit.com/r/${location}/new.json`)
-            .then(function(res) {
-            //let data = object.entries(data)
-            return res.json();
+    .then(function (res) {
+      //let data = object.entries(data)
+      return res.json();
     })
-    .then(function(res) { 
-      let dataAll, markup=``;
-      const postArray = res.data.children
-      
+    .then(function (res) {
+      let dataAll,
+        markup = ``;
+      const postArray = res.data.children;
+
       for (let i = 0; i < postArray.length; i++) {
-          var media = '';
-          //console.log(postArray[i].data.media_embed)
-          if (postArray[i].data.media_embed) {
-            
-            media = postArray[i].data.media_embed.content;
-            /*console.log(decodeEntity(media))
+        var media = "";
+        //console.log(postArray[i].data.media_embed)
+        if (postArray[i].data.media_embed) {
+          media = postArray[i].data.media_embed.content;
+          /*console.log(decodeEntity(media))
             const frame = document.createElement('iframe');
             frame.innerHTML = decodeEntity(media);
             document.getElementById('card').appendChild(frame);
             */
-          } 
-          dataAll = postArray[i].data;
-          
-          markup+=`
+        }
+        dataAll = postArray[i].data;
+
+        markup += `
           <div class="card">
             <a class="post" href="https://www.reddit.com/${dataAll.permalink}">
-            <h1 class="title">${dataAll.title}</h1>
+            <h1 class="title1">${dataAll.title}</h1>
             <p class="message">${dataAll.selftext}</p>
             <p class="author">${dataAll.author}</p>
             <p class=""></p>
             ${decodeEntity(media)}
           </div>
           `;
-      };
-      card.insertAdjacentHTML('afterbegin',markup);
+      }
+      card.insertAdjacentHTML("afterbegin", markup);
     })
-    .catch((err)=> {
-        console.log(err);
-    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function getPlaceData() {
-    // create a reference the search text
+  // create a reference the search text
 
-    // get the search text
-    // pass the search text to the lookup location
-    var input = getElementById("mapsearch");
-    t.input.textcontent.addEventListener("onclick");
-    prompt(lookupLocation);
+  // get the search text
+  // pass the search text to the lookup location
+  // var input = getElementById("mapsearch");
+  var input = getElementById("location");
+  input.textcontent.addEventListener("onclick");
+  prompt(lookupLocation);
 }
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
-        center: {
-            lat: 40.72,
-            lng: -73.96,
-        },
-    });
-    geocoder = new google.maps.Geocoder();
-    infowindow = new google.maps.InfoWindow();
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 8,
+    center: {
+      lat: 53.4808,
+      lng: -2.2426,
+    },
+  });
+  geocoder = new google.maps.Geocoder();
+  infowindow = new google.maps.InfoWindow();
 }
 
 function lookupLocation(location) {
-    var requestOptions = {
-        method: "GET",
-        mode: "no-cors",
-    };
-    fetch(
-            `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${location}&types=establishment&location=37.76999%2C-122.44696&radius=500&key=AIzaSyCr-Av0kS8QAYgzV2dOHJXomDn8rxTcsRA`
-        )
-        .then((response) => response.json())
-        .then((result) => getPlaceId(result));
+  var requestOptions = {
+    method: "GET",
+    mode: "no-cors",
+  };
+  fetch(
+    `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${location}&types=establishment&location=37.76999%2C-122.44696&radius=500&key=AIzaSyCr-Av0kS8QAYgzV2dOHJXomDn8rxTcsRA`
+  )
+    .then((response) => response.json())
+    .then((result) => getPlaceId(result));
 }
 
-
-
 function getPlaceId(result) {
-    console.log(result);
-    var placeId = result.predictions[0].place_id;
-    geocodePlaceId(placeId);
+  console.log(result);
+  var placeId = result.predictions[0].place_id;
+  geocodePlaceId(placeId);
 }
 
 function geocodePlaceId(placeId) {
-    geocoder
-        .geocode({
-            placeId: placeId,
-        })
-        .then(({ results }) => {
-            if (results[0]) {
-                map.setZoom(11);
-                map.setCenter(results[0].geometry.location);
-                const marker = new google.maps.Marker({
-                    map,
-                    position: results[0].geometry.location,
-                });
-                infowindow.setContent(results[0].formatted_address);
-                infowindow.open(map, marker);
-            } else {
-                window.alert("No results found");
-            }
-        })
-        .catch((e) => window.alert("Geocoder failed due to: " + e));
+  geocoder
+    .geocode({
+      placeId: placeId,
+    })
+    .then(({ results }) => {
+      if (results[0]) {
+        map.setZoom(11);
+        map.setCenter(results[0].geometry.location);
+        const marker = new google.maps.Marker({
+          map,
+          position: results[0].geometry.location,
+        });
+        infowindow.setContent(results[0].formatted_address);
+        infowindow.open(map, marker);
+      } else {
+        window.alert("No results found");
+      }
+    })
+    .catch((e) => window.alert("Geocoder failed due to: " + e));
 }
 window.initMap = initMap;
 
-var today = new Date;
-document.getElementById('time').innerHTML= today.toDateString();
-
+var today = new Date();
+document.getElementById("time").innerHTML = today.toDateString();
 
 function openSearch() {
   document.getElementById("myOverlay").style.display = "block";
@@ -160,71 +155,71 @@ function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
 }
 
-
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
-
-btn.onclick = function() {
+btn.onclick = function () {
   modal.style.display = "block";
-}
+};
 
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
-}
+};
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
-
+};
 
 var ParallaxManager, ParallaxPart;
 
-ParallaxPart = (function() {
+ParallaxPart = (function () {
   function ParallaxPart(el) {
     this.el = el;
-    this.speed = parseFloat(this.el.getAttribute('data-parallax-speed'));
-    this.maxScroll = parseInt(this.el.getAttribute('data-max-scroll'));
+    this.speed = parseFloat(this.el.getAttribute("data-parallax-speed"));
+    this.maxScroll = parseInt(this.el.getAttribute("data-max-scroll"));
   }
 
-  ParallaxPart.prototype.update = function(scrollY) {
-    if (scrollY > this.maxScroll) { return; }
+  ParallaxPart.prototype.update = function (scrollY) {
+    if (scrollY > this.maxScroll) {
+      return;
+    }
     var offset = -(scrollY * this.speed);
     this.setYTransform(offset);
   };
 
-  ParallaxPart.prototype.setYTransform = function(val) {
+  ParallaxPart.prototype.setYTransform = function (val) {
     this.el.style.webkitTransform = "translate3d(0, " + val + "px, 0)";
-    this.el.style.MozTransform    = "translate3d(0, " + val + "px, 0)";
-    this.el.style.OTransform      = "translate3d(0, " + val + "px, 0)";
-    this.el.style.transform       = "translate3d(0, " + val + "px, 0)";
-    this.el.style.msTransform     = "translateY(" + val + "px)";
+    this.el.style.MozTransform = "translate3d(0, " + val + "px, 0)";
+    this.el.style.OTransform = "translate3d(0, " + val + "px, 0)";
+    this.el.style.transform = "translate3d(0, " + val + "px, 0)";
+    this.el.style.msTransform = "translateY(" + val + "px)";
   };
 
   return ParallaxPart;
-
 })();
 
-ParallaxManager = (function() {
+ParallaxManager = (function () {
   ParallaxManager.prototype.parts = [];
 
   function ParallaxManager(elements) {
-    if (typeof elements === 'array' && elements.length) {
+    if (typeof elements === "array" && elements.length) {
       this.elements = elements;
     }
-    if (typeof elements === 'object' && elements.item) {
+    if (typeof elements === "object" && elements.item) {
       this.elements = Array.prototype.slice.call(elements);
-    } else if (typeof elements === 'string') {
+    } else if (typeof elements === "string") {
       this.elements = document.querySelectorAll(elements);
       if (this.elements.length === 0) {
         throw new Error("Parallax: No elements found");
       }
       this.elements = Array.prototype.slice.call(this.elements);
     } else {
-      throw new Error("Parallax: Element variable is not a querySelector string, Array, or NodeList");
+      throw new Error(
+        "Parallax: Element variable is not a querySelector string, Array, or NodeList"
+      );
     }
     for (var i in this.elements) {
       this.parts.push(new ParallaxPart(this.elements[i]));
@@ -232,30 +227,46 @@ ParallaxManager = (function() {
     window.addEventListener("scroll", this.onScroll.bind(this));
   }
 
-  ParallaxManager.prototype.onScroll = function() {
+  ParallaxManager.prototype.onScroll = function () {
     window.requestAnimationFrame(this.scrollHandler.bind(this));
   };
 
-  ParallaxManager.prototype.scrollHandler = function() {
+  ParallaxManager.prototype.scrollHandler = function () {
     var scrollY = Math.max(window.pageYOffset, 0);
-    for (var i in this.parts) { this.parts[i].update(scrollY); }
+    for (var i in this.parts) {
+      this.parts[i].update(scrollY);
+    }
   };
 
   return ParallaxManager;
-
 })();
 
-new ParallaxManager('.parallax-layer');
+new ParallaxManager(".parallax-layer");
 //
-var top = document.getElementById('a8').offsetTop;
+var top = document.getElementById("a8").offsetTop;
 
-window.onscroll = function() {
-    var y = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    if (y >= top) {
-        a8.className = 'stick';
-    }
-    else {
-        a8.className = '';
-    }
+window.onscroll = function () {
+  var y =
+    (document.documentElement && document.documentElement.scrollTop) ||
+    document.body.scrollTop;
+  if (y >= top) {
+    a8.className = "stick";
+  } else {
+    a8.className = "";
+  }
 };
 
+var testObject = { one: 1, two: 2, three: 3 };
+
+// Put the object into storage
+localStorage.setItem("testObject", JSON.stringify(testObject));
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem("testObject");
+
+console.log("retrievedObject: ", JSON.parse(retrievedObject));
+
+localStorage.setItem(key, val);
+var val = localStorage.getItem(key);
+localStorage.removeItem(key);
+localStorage.clear();
