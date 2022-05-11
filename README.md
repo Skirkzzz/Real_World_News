@@ -11,11 +11,11 @@ Through a search bar users are able to choose a location and are shown it in goo
 ![image](https://user-images.githubusercontent.com/100947794/166459176-570cf8a9-273a-4b24-8a6d-189db9561a2d.png)
 
 * Use the search bar to search a location in the UK you would like to hear from, some examples:
--  Manchester
--  Glasgow
--  London
--  Leeds
--  Ireland
+  -  Manchester
+  -  Glasgow
+  -  London
+  -  Leeds
+  -  Ireland
 
 ![image](https://user-images.githubusercontent.com/100947794/166460915-a112766d-99bd-40e3-af32-be9d3e7ca26f.png)
 
